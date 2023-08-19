@@ -1,0 +1,26 @@
+project test ;
+const x=10; y=20; z=105;
+var one,two,three,four : int;
+seven,eight,nine : int ;
+subroutine first ;
+subroutine second ;
+const j=19; w=80; k=13; f=4;
+var eleven,twilve,therteen,seventeen : int;
+begin end ;
+begin
+if degree => 80
+then print (pass)
+else lose := (100/2 % 3 * x-f) * (55 - j/y)
+endif;
+while i|=5 do
+begin
+scan(three);
+end;
+print(good);
+end ;
+begin
+if lose=55 then
+print(sorry)
+else print(congratuation) endif ;
+end
+.

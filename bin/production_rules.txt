@@ -1,0 +1,58 @@
+S ::= project-declaration $
+project-declaration ::= project-def .
+project-def ::= project-heading declarations compound-stmt
+project-heading ::= project name ;
+declarations ::= const-decl var-decl subroutine-decl
+const-decl ::= const const-list
+const-decl ::= ''
+const-list ::= name = integer-value ; const-list
+const-list ::= ''
+var-decl ::= var var-list
+var-decl ::= ''
+var-list ::= var-item ; var-list
+var-list ::= ''
+var-item ::= name-list : int
+name-list ::= name more-names
+more-names ::= , name-list
+more-names ::= ''
+subroutine-decl ::= subroutine-heading declarations compound-stmt ;
+subroutine-decl ::= ''
+subroutine-heading ::= subroutine name ;
+compound-stmt ::= begin stmt-list end
+stmt-list ::= statement ; stmt-list
+stmt-list ::= ''
+statement ::= ass-stmt
+statement ::= inout-stmt
+statement ::= if-stmt
+statement ::= while-stmt
+statement ::= compound-stmt
+statement ::= ''
+ass-stmt ::= name := arith-exp
+arith-exp ::= term arith-exp-prime
+arith-exp-prime ::= add-sign term arith-exp-prime
+arith-exp-prime ::= ''
+term ::= factor term-prime
+term-prime ::= mul-sign factor term-prime
+term-prime ::= ''
+factor ::= ( arith-exp )
+factor ::= name-value
+name-value ::= name
+name-value ::= integer-value
+add-sign ::= +
+add-sign ::= -
+mul-sign ::= *
+mul-sign ::= /
+mul-sign ::= %
+inout-stmt ::= scan ( name )
+inout-stmt ::= print ( name-value )
+if-stmt ::= if bool-exp then statement else-part endif
+else-part ::= else statement
+else-part ::= ''
+while-stmt ::= while bool-exp do statement
+bool-exp ::= name-value relational-oper name-value
+relational-oper ::= =
+relational-oper ::= |=
+relational-oper ::= <
+relational-oper ::= =<
+relational-oper ::= >
+relational-oper ::= =>
